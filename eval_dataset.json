@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "question": "合肥现在有多少个岗位在招？",
+    "expected_tool": "salary_stats",
+    "expected_keywords": ["14"],
+    "point": "精确数量必须查工具，不能凭印象编"
+  },
+  {
+    "id": 2,
+    "question": "合肥有哪些工艺工程师岗位？",
+    "expected_tool": "search_jobs",
+    "expected_keywords": ["工艺工程师"],
+    "point": "基础检索"
+  },
+  {
+    "id": 3,
+    "question": "上海的数字IC验证工程师要求什么学历？",
+    "expected_tool": "search_jobs",
+    "expected_keywords": ["硕士"],
+    "point": "城市 + 岗位的双条件检索"
+  },
+  {
+    "id": 4,
+    "question": "上海和合肥哪个城市的平均薪资更高？",
+    "expected_tool": "salary_stats",
+    "expected_keywords": ["上海"],
+    "point": "需要对比两个城市的统计结果"
+  },
+  {
+    "id": 5,
+    "question": "帮我找找要求硕士学历的岗位",
+    "expected_tool": "search_jobs",
+    "expected_keywords": ["硕士"],
+    "point": "按学历单条件筛选"
+  },
+  {
+    "id": 6,
+    "question": "合肥有没有不需要经验的岗位？",
+    "expected_tool": "search_jobs",
+    "expected_keywords": ["应届"],
+    "point": "口语化提问的语义理解"
+  },
+  {
+    "id": 7,
+    "question": "平均薪资最高的岗位是哪个？",
+    "expected_tool": "salary_stats",
+    "expected_keywords": ["模拟IC"],
+    "point": "排序类问题"
+  },
+  {
+    "id": 8,
+    "question": "如果我在合肥拿到月薪12000，一年按14薪算，年收入是多少？",
+    "expected_tool": "calculate",
+    "expected_keywords": ["168000", "168,000", "16.8万", "168"],
+    "point": "算数字必须调用计算工具，不能让模型心算"
+  },
+  {
+    "id": 9,
+    "question": "合肥和上海的岗位数量差多少？",
+    "expected_tool": ["salary_stats", "calculate"],
+    "expected_keywords": ["8"],
+    "point": "多步编排：两次统计 + 一次计算"
+  },
+  {
+    "id": 10,
+    "question": "有没有和大模型、提示词相关的岗位？",
+    "expected_tool": "search_jobs",
+    "expected_keywords": ["AI算法"],
+    "point": "用技能关键词反查岗位"
+  },
+  {
+    "id": 11,
+    "question": "本科应届生能投合肥哪些岗位？",
+    "expected_tool": "search_jobs",
+    "expected_keywords": ["本科"],
+    "point": "城市 + 学历多条件筛选"
+  },
+  {
+    "id": 12,
+    "question": "合肥的工艺工程师和上海的工艺工程师薪资差多少？",
+    "expected_tool": ["search_jobs", "salary_stats"],
+    "expected_keywords": ["工艺"],
+    "point": "同一岗位跨城市对比"
+  },
+  {
+    "id": 13,
+    "question": "可靠性工程师在哪招，要求什么？",
+    "expected_tool": "search_jobs",
+    "expected_keywords": ["可靠性"],
+    "point": "一次提问包含两个信息点"
+  },
+  {
+    "id": 14,
+    "question": "IT 类的岗位有哪些？",
+    "expected_tool": "search_jobs",
+    "expected_keywords": ["数据"],
+    "point": "按部门检索，中文里夹英文缩写"
+  },
+  {
+    "id": 15,
+    "question": "帮我算一下 15万除以12是多少",
+    "expected_tool": "calculate",
+    "expected_keywords": ["12500", "12,500", "125"],
+    "point": "中文数量词（15万）要先换算再计算"
+  },
+  {
+    "id": 16,
+    "question": "哪个城市岗位更多？",
+    "expected_tool": "salary_stats",
+    "expected_keywords": ["合肥"],
+    "point": "口语句式，没有明确说「统计」"
+  },
+  {
+    "id": 17,
+    "question": "设备工程师的薪资范围是多少？",
+    "expected_tool": "search_jobs",
+    "expected_keywords": ["设备工程师"],
+    "point": "单岗位明细查询"
+  },
+  {
+    "id": 18,
+    "question": "我学材料的，硕士，适合投哪些岗位？",
+    "expected_tool": "search_jobs",
+    "expected_keywords": ["材料"],
+    "point": "根据个人背景做推荐"
+  },
+  {
+    "id": 19,
+    "question": "合肥岗位的平均月薪大概多少？",
+    "expected_tool": "salary_stats",
+    "expected_keywords": ["合肥"],
+    "point": "平均值的取整与单位说明"
+  },
+  {
+    "id": 20,
+    "question": "你好，你能帮我做什么？",
+    "expected_tool": "none",
+    "expected_keywords": ["岗位", "招聘", "薪资"],
+    "point": "闲聊不该乱调工具，考验工具的调用边界"
+  }
+]
